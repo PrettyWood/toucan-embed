@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toucan Embed</title>
+    <script>
+      window.counterElementOnCountUpdate = (count) => {
+        console.log(`React from CE: new count = ${count}`);
+      };
+    </script>
+  </head>
+  <body>
+    <!-- react -->
+    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"></div>
+    <!-- custom element -->
+    <script type="module" src="/src/index.ts"></script>
+    <toucan-hello name="I am a Custom Element"></toucan-hello>
+    <script>
+      document
+        .querySelector("toucan-hello")
+        .addEventListener("countUpdated", (e) => {
+          console.log(`Pure CE: new count = ${e.detail.count}`);
+        });
+    </script>
+    <counter-element
+      name="I am a React component inside a Custom Element"
+      on-count-updated="counterElementOnCountUpdate"
+    ></counter-element>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "toucan-embed",
+  "version": "1.0.0",
+  "main": "./dist/toucan-embed.umd.js",
+  "module": "./dist/toucan-embed.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/toucan-embed.es.js",
+      "require": "./dist/toucan-embed.umd.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@lit/react": "^1.0.3",
+    "@r2wc/react-to-web-component": "^2.0.3",
+    "lit": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-decorators": "^7.23.3",
+    "@preact/signals-react-transform": "^0.3.0",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3"
+  }
+}
